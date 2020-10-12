@@ -1,0 +1,17 @@
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+.idea/
+.reviewboardrc
+node_modules/
+src/main/resources/static/build/bundle.js
+src/main/resources/static/build/bundle.js.map
+package-lock.json
+

@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "572fcf1a-ab56-4fcc-977b-0d5e72796816",
+		"name": "SpringExampleCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Cars",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "15cccc5c-b9c6-41a6-bfb6-c96971592ee4",
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response should be okay to process\", function () {",
+							"    pm.response.to.not.be.error;",
+							"    pm.response.to.have.jsonBody(Array(3));",
+							"    pm.response.to.not.have.jsonBody(\"error\");",
+							"})",
+							"",
+							"var jsData = JSON.parse(responseBody);",
+							"pm.test(\"Check Response\", function () {",
+							"    pm.expect(jsData[0].id).is.to.equal(1); ",
+							"    pm.expect(jsData[0].make).is.to.equal(\"Ford\"); ",
+							"    pm.expect(jsData[0].model).is.to.equal(\"Mustang\"); ",
+							"    pm.expect(jsData[0].year).is.to.equal(1998); ",
+							"    pm.expect(jsData[1].id).is.to.equal(2); ",
+							"    pm.expect(jsData[1].make).is.to.equal(\"Acura\"); ",
+							"    pm.expect(jsData[1].model).is.to.equal(\"ILX\"); ",
+							"    pm.expect(jsData[1].year).is.to.equal(2015); ",
+							"    pm.expect(jsData[2].id).is.to.equal(3); ",
+							"    pm.expect(jsData[2].make).is.to.equal(\"Honda\"); ",
+							"    pm.expect(jsData[2].model).is.to.equal(\"CRV\"); ",
+							"    pm.expect(jsData[2].year).is.to.equal(2018); ",
+							"})",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cars/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cars",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get One Car",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "15cccc5c-b9c6-41a6-bfb6-c96971592ee4",
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response should be okay to process\", function () {",
+							"    pm.response.to.not.be.error;",
+							"    pm.response.to.have.jsonBody(Array(1));",
+							"    pm.response.to.not.have.jsonBody(\"error\");",
+							"})",
+							"",
+							"var jsData = JSON.parse(responseBody);",
+							"pm.test(\"Check Response\", function () {",
+							"    pm.expect(jsData.id).is.to.equal(1); ",
+							"    pm.expect(jsData.make).is.to.equal(\"Ford\"); ",
+							"    pm.expect(jsData.model).is.to.equal(\"Mustang\"); ",
+							"    pm.expect(jsData.year).is.to.equal(1998); ",
+							"})",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cars/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cars",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put A Car",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ae15c1a6-490f-4766-ac61-87a050d9cdc5",
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response should be okay to process\", function () {",
+							"    pm.response.to.not.be.error;",
+							"    pm.response.to.have.jsonBody(Array(1));",
+							"    pm.response.to.not.have.jsonBody(\"error\");",
+							"})",
+							"",
+							"var jsData = JSON.parse(responseBody);",
+							"pm.collectionVariables.set(\"car_id\", jsData.id);",
+							"pm.test(\"Check Response\", function () {",
+							"    pm.expect(jsData.id).is.not.null; ",
+							"    pm.expect(jsData.make).is.to.equal(\"Rolls Royce\"); ",
+							"    pm.expect(jsData.model).is.to.equal(\"Silver Ghost\"); ",
+							"    pm.expect(jsData.year).is.to.equal(1906); ",
+							"})",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"make\":\"Rolls Royce\",\n\t\"model\":\"Silver Ghost\",\n\t\"year\":1906\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/cars",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Car 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "57b8ee0f-1ed2-4e94-a68c-599dc880fab4",
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cars/{{car_id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cars",
+						"{{car_id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d7ebaecd-969e-4988-963c-b3873d5648e1",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "473ec041-911e-49dd-b645-4ddf3e96b52d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "789c30ec-57dc-4ec8-9a33-b4a6c9c289ea",
+			"key": "car_id",
+			"value": "0",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

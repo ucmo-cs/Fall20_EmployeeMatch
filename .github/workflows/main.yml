@@ -1,0 +1,38 @@
+name: Build Java
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the master branch
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  build-jdk8:
+    runs-on: ubuntu-latest
+    name: Build on Java 8 and Test
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/cache@v1
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-jdk8-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-jdk8-
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: Build project with Maven
+      run: mvn -B -f pom.xml verify
+    - name: Start Spring Boot server
+      run: mvn -B -f pom.xml spring-boot:start
+    - name: Run Newman tests
+      run: target/node/node node_modules/newman/bin/newman.js run src/test/postman/SpringExampleCollection.postman_collection.json
+    - name: Run TestCafe tests
+      run: target/node/node node_modules/testcafe/bin/testcafe.js firefox:headless src/test/testcafe/
+
+
+
+

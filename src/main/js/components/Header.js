@@ -7,20 +7,12 @@ import {Link} from "react-router-dom";
 class Header extends Component{
 
 
-    /*goToLogin()   {
-        window.localStorage.removeItem("carId");
-        this.props.history.push('/login');
-    }*/
     render(){
-        function goToLogin() {
-            window.localStorage.removeItem("carId");
-            this.props.history.push('/login');
-        }
 
         return(
 
             <nav className="navbar navbar-expand-lg navbar-light bg-secondary">
-                <a className="navbar-brand font-weight-bold " href="#">Home</a>
+                <a className="navbar-brand font-weight-bold " href="/">Home</a>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item font-weight-bold">
@@ -36,7 +28,7 @@ class Header extends Component{
                 </div>
 
 
-                <button type="button" className="btn btn-primary btn-lg"><Link className="text-light" to="/login">Login</Link></button>
+                <Link className="text-light" to="/login"><button type="button" className="btn btn-primary btn-lg">Login</button></Link>
 
 
             </nav>

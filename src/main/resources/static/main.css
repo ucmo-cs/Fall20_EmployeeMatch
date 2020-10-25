@@ -9,8 +9,8 @@ td, th {
 }
 body {font-family: Arial, Helvetica, sans-serif;}
 
-.uname, psw{
-    font size: 15px;
+.uname, .psw{
+    font-size: 15px;
 }
 
 /* Full-width input fields */
@@ -24,15 +24,8 @@ input[type=text], input[type=password] {
 }
 
 /* Set a style for all buttons */
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 20px 20px;
-    border: 1px solid black;
-    cursor: pointer;
-    width: auto;
-}
+
+
 
 button:hover {
     opacity: 0.8;

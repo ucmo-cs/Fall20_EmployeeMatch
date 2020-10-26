@@ -19,7 +19,13 @@ module.exports = {
                     options: {
                         presets: ["@babel/preset-env", "@babel/preset-react"]
                     }
-                }]
+                }, /*{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 8192,
+                        },
+                    }*/
+                ]
             }
         ]
     }

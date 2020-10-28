@@ -3033,20 +3033,6 @@ module.exports = hoistNonReactStatics;
 
 /***/ }),
 
-/***/ "./node_modules/isarray/index.js":
-/*!***************************************!*\
-  !*** ./node_modules/isarray/index.js ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = Array.isArray || function (arr) {
-  return Object.prototype.toString.call(arr) == '[object Array]';
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/mini-create-react-context/dist/esm/index.js":
 /*!******************************************************************!*\
   !*** ./node_modules/mini-create-react-context/dist/esm/index.js ***!
@@ -3352,7 +3338,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isarray = __webpack_require__(/*! isarray */ "./node_modules/isarray/index.js")
+var isarray = __webpack_require__(/*! isarray */ "./node_modules/path-to-regexp/node_modules/isarray/index.js")
 
 /**
  * Expose `pathToRegexp`.
@@ -3778,6 +3764,20 @@ function pathToRegexp (path, keys, options) {
 
   return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/path-to-regexp/node_modules/isarray/index.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/path-to-regexp/node_modules/isarray/index.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = Array.isArray || function (arr) {
+  return Object.prototype.toString.call(arr) == '[object Array]';
+};
 
 
 /***/ }),
@@ -34677,12 +34677,17 @@ function AboutView() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _resources_Images_HandShake_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../resources/Images/HandShake.jpg */ "./src/main/resources/Images/HandShake.jpg");
+/* harmony import */ var _resources_Images_HandShake_jpg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_resources_Images_HandShake_jpg__WEBPACK_IMPORTED_MODULE_1__);
+
 
 
 function HomeView() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "This is the home page"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "p-3"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "homePageBackground"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Hello With Image")));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (HomeView);
@@ -34736,6 +34741,17 @@ function LoginView() {
 
 /***/ }),
 
+/***/ "./src/main/js/app.css":
+/*!*****************************!*\
+  !*** ./src/main/js/app.css ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\src\\main\\js\\app.css: Unexpected token (1:0)\n\n> 1 | .homePageBackground{\n    | ^\n  2 |     background-image: url(../resources/Images/HandShake.jpg);\n  3 | }\n    at Object._raise (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:766:17)\n    at Object.raiseWithData (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:759:17)\n    at Object.raise (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:753:17)\n    at Object.unexpected (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:8966:16)\n    at Object.parseExprAtom (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:10282:20)\n    at Object.parseExprAtom (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:4718:20)\n    at Object.parseExprSubscripts (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:9844:23)\n    at Object.parseUpdate (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:9824:21)\n    at Object.parseMaybeUnary (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:9813:17)\n    at Object.parseExprOps (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:9683:23)\n    at Object.parseMaybeConditional (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:9657:23)\n    at Object.parseMaybeAssign (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:9620:21)\n    at Object.parseExpressionBase (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:9564:23)\n    at allowInAnd (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:9558:39)\n    at Object.allowInAnd (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:11297:16)\n    at Object.parseExpression (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:9558:17)\n    at Object.parseStatementContent (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:11562:23)\n    at Object.parseStatement (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:11431:17)\n    at Object.parseBlockOrModuleBlockBody (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:12013:25)\n    at Object.parseBlockBody (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:11999:10)\n    at Object.parseTopLevel (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:11362:10)\n    at Object.parse (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:13045:10)\n    at parse (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:13098:38)\n    at parser (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\core\\lib\\parser\\index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:99:38)\n    at normalizeFile.next (<anonymous>)\n    at run (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\core\\lib\\transformation\\index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\core\\lib\\transform.js:27:41)");
+
+/***/ }),
+
 /***/ "./src/main/js/app.js":
 /*!****************************!*\
   !*** ./src/main/js/app.js ***!
@@ -34752,10 +34768,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_AddComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/AddComponent */ "./src/main/js/components/AddComponent.js");
 /* harmony import */ var _components_EditComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/EditComponent */ "./src/main/js/components/EditComponent.js");
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Header */ "./src/main/js/components/Header.js");
-/* harmony import */ var _Views_LoginView__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Views/LoginView */ "./src/main/js/Views/LoginView.js");
-/* harmony import */ var _Views_HomeView__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Views/HomeView */ "./src/main/js/Views/HomeView.js");
-/* harmony import */ var _Views_AboutView__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Views/AboutView */ "./src/main/js/Views/AboutView.js");
+/* harmony import */ var _app_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.css */ "./src/main/js/app.css");
+/* harmony import */ var _app_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_app_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Views_LoginView__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Views/LoginView */ "./src/main/js/Views/LoginView.js");
+/* harmony import */ var _Views_HomeView__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Views/HomeView */ "./src/main/js/Views/HomeView.js");
+/* harmony import */ var _Views_AboutView__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Views/AboutView */ "./src/main/js/Views/AboutView.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -34777,7 +34796,7 @@ function App() {
   }, "style", style), "Employee Match"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/",
     exact: true
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Views_HomeView__WEBPACK_IMPORTED_MODULE_7__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Views_HomeView__WEBPACK_IMPORTED_MODULE_8__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/list",
     component: _components_ListComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
@@ -34789,9 +34808,9 @@ function App() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/about",
     component: _components_EditComponent__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Views_AboutView__WEBPACK_IMPORTED_MODULE_8__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Views_AboutView__WEBPACK_IMPORTED_MODULE_9__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/login"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Views_LoginView__WEBPACK_IMPORTED_MODULE_6__["default"], null))))));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Views_LoginView__WEBPACK_IMPORTED_MODULE_7__["default"], null))))));
 }
 
 var style = {
@@ -35397,6 +35416,17 @@ var ApiService = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (new ApiService());
+
+/***/ }),
+
+/***/ "./src/main/resources/Images/HandShake.jpg":
+/*!*************************************************!*\
+  !*** ./src/main/resources/Images/HandShake.jpg ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\src\\main\\resources\\Images\\HandShake.jpg: Unexpected character '�' (1:0)\n\n> 1 | ����\u0000\u0010JFIF\u0000\u0001\u0001\u0001\u0001,\u0001,\u0000\u0000��\u0002@ICC_PROFILE\u0000\u0001\u0001\u0000\u0000\u00020ADBE\u0002\u0010\u0000\u0000mntrRGB XYZ \u0007�\u0000\u0006\u0000\u0003\u0000\u0000\u0000\u0000\u0000\u0000acspAPPL\u0000\u0000\u0000\u0000none\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000��\u0000\u0001\u0000\u0000\u0000\u0000�-ADBE\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\n    | ^\n  2 | cprt\u0000\u0000\u0000�\u0000\u0000\u00002desc\u0000\u0000\u00010\u0000\u0000\u0000kwtpt\u0000\u0000\u0001�\u0000\u0000\u0000\u0014bkpt\u0000\u0000\u0001�\u0000\u0000\u0000\u0014rTRC\u0000\u0000\u0001�\u0000\u0000\u0000\u000egTRC\u0000\u0000\u0001�\u0000\u0000\u0000\u000ebTRC\u0000\u0000\u0001�\u0000\u0000\u0000\u000erXYZ\u0000\u0000\u0001�\u0000\u0000\u0000\u0014gXYZ\u0000\u0000\u0002\b\u0000\u0000\u0000\u0014bXYZ\u0000\u0000\u0002\u001c\u0000\u0000\u0000\u0014text\u0000\u0000\u0000\u0000Copyright 1999 Adobe Systems Incorporated\u0000\u0000\u0000desc\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0011Adobe RGB (1998)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000XYZ \u0000\u0000\u0000\u0000\u0000\u0000�Q\u0000\u0001\u0000\u0000\u0000\u0001\u0016�XYZ \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000curv\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u00023\u0000\u0000curv\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u00023\u0000\u0000curv\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u00023\u0000\u0000XYZ \u0000\u0000\u0000\u0000\u0000\u0000�\u0018\u0000\u0000O�\u0000\u0000\u0004�XYZ \u0000\u0000\u0000\u0000\u0000\u00004�\u0000\u0000�,\u0000\u0000\u000f�XYZ \u0000\u0000\u0000\u0000\u0000\u0000&1\u0000\u0000\u0010/\u0000\u0000����\u0000C\u0000\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0002\u0002\u0001\u0001\u0002\u0001\u0001\u0001\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0001\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002��\u0000C\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0002\u0001\u0001\u0001\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002��\u0000\u0011\b\u00048\u0006l\u0003\u0001\u0011\u0000\u0002\u0011\u0001\u0003\u0011\u0001��\u0000\u001f\u0000\u0000\u0000\u0006\u0003\u0001\u0001\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0003\u0004\u0005\u0006\u0007\u0002\b\t\n  3 | \u0001\u000b��\u0000W\u0010\u0000\u0002\u0001\u0003\u0002\u0005\u0002\u0004\u0003\u0005\u0006\u0004\u0004\u0001\u0001\u0019\u0001\u0002\u0003\u0004\u0011\u0012\u0005!\u0000\u0006\u0013\"1\u0007A\b\u00142Q#aq\t\u0015B��$3R���\n  4 | \u0016��Cbr��\u0017%4S�&s��5DTc\u0018'd�\u0019\u001a6t�������\u0000\u001d\u0001\u0001\u0000\u0002\u0003\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0002\u0003\u0001\u0004\u0005\u0006\u0007\b\t��\u0000N\u0011\u0000\u0002\u0001\u0003\u0002\u0004\u0003\u0006\u0005\u0002\u0005\u0003\u0003\u0001\u0000\u0013\u0000\u0001\u0002\u0003\u0011!\u00041\u0012AQ�\u0005aq\u0013\"����\u00062���\u0014�\u0007#3BR\u0015br$4�C�\u0016\u0017��%Sc��5D��6�T����\u0000\f\u0003\u0001\u0000\u0002\u0011\u0003\u0011\u0000?\u0000��P,�Ǹ����o��\\�_�׶A�>��g��\u0000��\u0000�\u0002��\u0003�X�7\u0006�\u0000��\u0007�\u0004��������\u0000��\u0019p�/q����\u00157��\u0001��-���<N-5n`]\u0013�������KoB2W^b�����\u0000C�H)6��P��ͽ�\u0013J�Is���\t p\u0000�\u0001�\u0003���'<\f��}\u0002���\u0000K�\f?����\u000e\u0006A�\u0005J�\u001fa�\u0007�mく$jo�%\n    at Object._raise (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:766:17)\n    at Object.raiseWithData (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:759:17)\n    at Object.raise (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:753:17)\n    at Object.getTokenFromCode (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:8296:16)\n    at Object.getTokenFromCode (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:4750:18)\n    at Object.nextToken (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:7762:12)\n    at Object.parse (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:13043:10)\n    at parse (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\parser\\lib\\index.js:13098:38)\n    at parser (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\core\\lib\\parser\\index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:99:38)\n    at normalizeFile.next (<anonymous>)\n    at run (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\core\\lib\\transformation\\index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\@babel\\core\\lib\\transform.js:27:41)\n    at transform.next (<anonymous>)\n    at step (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\gensync\\index.js:254:32)\n    at gen.next (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\gensync\\index.js:266:13)\n    at async.call.value (C:\\Users\\Nehemiah D\\Desktop\\School\\Senior Project\\EmployeeMatch\\node_modules\\gensync\\index.js:216:11)");
 
 /***/ })
 

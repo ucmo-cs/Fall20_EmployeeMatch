@@ -17,4 +17,4 @@ function WorkWithView()
         </html>
     );
 }
-export default WorkWithView()
+export default WorkWithView

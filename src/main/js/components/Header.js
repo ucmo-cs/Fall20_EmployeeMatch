@@ -19,7 +19,7 @@ class Header extends Component{
                             <Link className="nav-link" to="/about">Who We Are</Link>
                         </li>
                         <li className="nav-item font-weight-bold">
-                            <Link className="nav-link" to="/Work_With">Who We Work With</Link>
+                            <Link className="nav-link" to="/WorkWith">Who We Work With</Link>
                         </li>
                         <li className="nav-item font-weight-bold">
                             <Link className="nav-link" to="/We_Help">Who We Help</Link>

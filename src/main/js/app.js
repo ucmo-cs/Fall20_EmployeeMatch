@@ -4,7 +4,6 @@ import ListComponent from "./components/ListComponent";
 import AddComponent from "./components/AddComponent";
 import EditComponent from "./components/EditComponent";
 import Header from "./components/Header";
-//import './app.css'
 const ReactDOM = require('react-dom');
 import LoginView from './Views/LoginView'
 import HomeView from './Views/HomeView'
@@ -19,7 +18,7 @@ function App() {
 			<Router>
 				<Header/>
 				<div >
-					<h1 className="text-center" style={'{position: absolute;}'} style={style}>Employee Match</h1>
+
 					<Switch>
 						<Route path="/" exact><HomeView/></Route>
 						<Route path="/list" component={ListComponent} />
@@ -37,10 +36,6 @@ function App() {
 	);
 }
 
-const style = {
-	color: 'red',
-	margin: '10px'
-}
 
 export default App;
 

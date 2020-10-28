@@ -96,3 +96,20 @@ span.psw {
         width: 100%;
     }
 }
+
+/*css for main page background image div*/
+.mainPage   {
+    background-image: url(http://localhost:8080/Images/HandShake.jpg);
+    background-size: cover;
+    height: 45vw;
+    background-repeat: no-repeat;
+    opacity: .75;
+    /*background-attachment: fixed;*/
+    background-position: center center;
+}
+
+.mainPage h1   {
+    font-weight: bold;
+    color: black;
+
+}

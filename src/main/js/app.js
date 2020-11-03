@@ -8,6 +8,7 @@ const ReactDOM = require('react-dom');
 import LoginView from './Views/LoginView'
 import HomeView from './Views/HomeView'
 import AboutView from './Views/AboutView'
+import WorkWithView from "./Views/WorkWithView";
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
 						<Route path="/add" component={AddComponent} />
 						<Route path="/edit" component={EditComponent} />
 						<Route path="/about" component={EditComponent}><AboutView/></Route>
+						<Route path="/WorkWith" component={EditComponent}><WorkWithView/></Route>
 						<Route path="/login">
 							<LoginView/>
 						</Route>

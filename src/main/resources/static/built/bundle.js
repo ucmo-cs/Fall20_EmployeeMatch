@@ -4752,7 +4752,7 @@ module.exports = ReactPropTypesSecret;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.13.1
+/** @license React v16.14.0
  * react-dom.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -29322,7 +29322,7 @@ function injectIntoDevTools(devToolsConfig) {
     // Enables DevTools to append owner stacks to error messages in DEV mode.
     getCurrentFiber:  function () {
       return current;
-    } 
+    }
   }));
 }
 var IsSomeRendererActing$1 = ReactSharedInternals.IsSomeRendererActing;
@@ -29674,7 +29674,7 @@ implementation) {
   };
 }
 
-var ReactVersion = '16.13.1';
+var ReactVersion = '16.14.0';
 
 setAttemptUserBlockingHydration(attemptUserBlockingHydration$1);
 setAttemptContinuousHydration(attemptContinuousHydration$1);
@@ -31220,7 +31220,7 @@ if (true) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.13.1
+/** @license React v16.14.0
  * react.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -31240,7 +31240,7 @@ if (true) {
 var _assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
 var checkPropTypes = __webpack_require__(/*! prop-types/checkPropTypes */ "./node_modules/prop-types/checkPropTypes.js");
 
-var ReactVersion = '16.13.1';
+var ReactVersion = '16.14.0';
 
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
@@ -34740,6 +34740,27 @@ function LoginView() {
 
 /***/ }),
 
+/***/ "./src/main/js/Views/WorkWithView.js":
+/*!*******************************************!*\
+  !*** ./src/main/js/Views/WorkWithView.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function WorkWithView() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("html", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Who We Work With"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Employee Match partners with both job-seekers and employee-recruiters to help each other find exactly what they are looking for."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Names you may know who use our services include: Amazon, Google, and Facebook"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "We also work with many other Fortune 500 companies as well and we have a major presence on many universities among upper class students looking for jobs. Check us out!")));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (WorkWithView);
+
+/***/ }),
+
 /***/ "./src/main/js/app.js":
 /*!****************************!*\
   !*** ./src/main/js/app.js ***!
@@ -34759,6 +34780,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Views_LoginView__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Views/LoginView */ "./src/main/js/Views/LoginView.js");
 /* harmony import */ var _Views_HomeView__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Views/HomeView */ "./src/main/js/Views/HomeView.js");
 /* harmony import */ var _Views_AboutView__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Views/AboutView */ "./src/main/js/Views/AboutView.js");
+/* harmony import */ var _Views_WorkWithView__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Views/WorkWithView */ "./src/main/js/Views/WorkWithView.js");
 
 
 
@@ -34767,6 +34789,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+
 
 
 
@@ -34789,6 +34812,9 @@ function App() {
     path: "/about",
     component: _components_EditComponent__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Views_AboutView__WEBPACK_IMPORTED_MODULE_8__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/WorkWith",
+    component: _components_EditComponent__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Views_WorkWithView__WEBPACK_IMPORTED_MODULE_9__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/login"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Views_LoginView__WEBPACK_IMPORTED_MODULE_6__["default"], null))))));
 }

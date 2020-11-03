@@ -1,1 +1,2 @@
 INSERT INTO employee VALUES(507,"Carol","Baskin", "killedHerHusband@wackedhim.com") Where "Carol" NOT IN (SELECT fname from employee);
+/*insert into employer VALUES(999,'Schrute Farms','jim_stinks@dundermifflin.com');*/

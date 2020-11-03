@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS employer (
     email CHAR(50) ,
     Primary KEY (companyId)
     )
-DROP TABLE IF EXISTS employer;
+DROP TABLE IF EXISTS employeePreferences;
 CREATE TABLE IF NOT EXISTS employeePreferences (
     userId INT UNIQUE,
     ew1 int,

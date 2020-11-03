@@ -1,6 +1,7 @@
+/*
 package edu.ucmo.spring_example.controller;
 
-import edu.ucmo.spring_example.dao.CarDao;
+import edu.ucmo.spring_example.dao.EmployeePreferencesDao;
 import edu.ucmo.spring_example.model.Car;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -11,7 +12,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -27,7 +27,7 @@ public class CarControllerTest {
     private CarController carController;
 
     @Autowired
-    private CarDao carDao;
+    private EmployeePreferencesDao carDao;
 
     @Autowired
     private JdbcTemplate template;
@@ -90,3 +90,6 @@ public class CarControllerTest {
     }
 
 }
+
+
+ */

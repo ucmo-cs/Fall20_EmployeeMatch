@@ -1,7 +1,7 @@
-package edu.ucmo.spring_example.controller;
+/*package edu.ucmo.spring_example.controller;
 
 import edu.ucmo.spring_example.model.Car;
-import edu.ucmo.spring_example.dao.CarDao;
+import edu.ucmo.spring_example.dao.EmployeePreferencesDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +14,7 @@ import java.util.Optional;
 public class CarController {
 
     @Autowired
-    private CarDao carDao;
+    private EmployeePreferencesDao carDao;
 
     @PostMapping
     public Car saveCar(@RequestBody Car car){
@@ -54,3 +54,4 @@ public class CarController {
         carDao.deleteById(id);
      }
 }
+ */

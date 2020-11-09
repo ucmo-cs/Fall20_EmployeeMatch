@@ -34,6 +34,9 @@ function App() {
 						<Route path="/Register">
 							<RegisterView/>
 						</Route>
+						<Route path="/registerQuestions">
+							<RegisterQuestionsView/>
+						</Route>
 
 					</Switch>
 				</div>

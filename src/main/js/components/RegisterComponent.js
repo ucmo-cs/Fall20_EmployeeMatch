@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import RegisterCouplets from "./RegisterCouplets";
+import Link from "react-router-dom/modules/Link";
 
 class RegisterComponent extends Component{
     submitHandler;
@@ -26,7 +27,7 @@ class RegisterComponent extends Component{
                     <RegisterCouplets name="Last Name"/>
 
                     <br/>
-                    <input type="submit" style={{float: 'right'}} value="Submit"/>
+                    <Link to="/registerquestions"><input type="submit" style={{float: 'right'}} value="Submit"/></Link>
                     <br/>
                 </form>
             </div>

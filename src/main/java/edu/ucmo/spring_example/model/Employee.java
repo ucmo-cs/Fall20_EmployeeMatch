@@ -1,7 +1,10 @@
 package edu.ucmo.spring_example.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Objects;
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "employee")
@@ -17,13 +20,15 @@ public class Employee {
     @Column
     private String lastn;
     @Column
-    private int email;
+    private String email;
     @Column
-    private int passHash;
+    private String passHash;
+    @Column(name = "active")
+    private Boolean active;
 
 
 
-    public Employee(String first, String last, int email) {
+    public Employee(String first, String last, String email) {
         this.firstn = first;
         this.lastn = last;
         this.email = email;
@@ -56,19 +61,27 @@ public class Employee {
         this.lastn = lastn;
     }
 
-    public int getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(int email) {
+    public void setEmail(String email) {
         this.email = email;
     }
-    public int getPassHash() {
+    public String getPassHash() {
         return passHash;
     }
 
-    public void setPassHash(int passHash) {
+    public void setPassHash(String passHash) {
         this.passHash = passHash;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 
     @Override

@@ -1,12 +1,12 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 function LoginView()
 {
 
         return (
-            <html>
-    <body>
-            <div class = "container">
+
+            <div className = "container">
                 <label htmlFor="uname"><b>Username</b></label>
                 <br></br>
                 <input type="text" placeholder="Enter Username" name="uname" required></input>
@@ -19,13 +19,15 @@ function LoginView()
 
                     <button type="button" className="submit">Login</button>
 
-                <button type="button" className="register">Register</button>
+
+                <Link to="/register"><input type="submit" className="register text-default" value="Register"></input></Link>
+
                 <span className="forgotpsw"><a href="#">Forgot password?</a></span>
             </div>
-    </body>
-            </html>
+
 
 
         );
 }
+//<button type="button" className="register">Register</button>
 export default LoginView

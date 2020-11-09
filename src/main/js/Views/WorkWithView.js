@@ -4,7 +4,7 @@ function WorkWithView()
 {
 
     return (
-        <html>
+
         <div>
             <h1>Who We Work With</h1>
             <p>Employee Match partners with both job-seekers and employee-recruiters to help each other find exactly what
@@ -14,7 +14,7 @@ function WorkWithView()
             <p>We also work with many other Fortune 500 companies as well and we have a
                 major presence on many universities among upper class students looking for jobs. Check us out!</p>
         </div>
-        </html>
+
     );
 }
 export default WorkWithView

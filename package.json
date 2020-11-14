@@ -36,6 +36,7 @@
     "babel-loader": "^8.0.2",
     "newman": "^4.6.0",
     "react-router-dom": "^5.2.0",
+    "react-router-loader": "^0.5.4",
     "testcafe": "^1.8.2",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.0"

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import RegisterCouplets from "./RegisterCouplets";
-import Link from "react-router-dom/modules/Link";
+import {Link} from "react-router-dom";
 
 class RegisterComponent extends Component{
     submitHandler;

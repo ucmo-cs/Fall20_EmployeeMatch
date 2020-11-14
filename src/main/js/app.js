@@ -10,6 +10,7 @@ import HomeView from './Views/HomeView'
 import AboutView from './Views/AboutView'
 import WorkWithView from "./Views/WorkWithView";
 import RegisterView from "./Views/RegisterView";
+import RegisterQuestionsView from "./Views/RegisterQuestionsView";
 
 function App() {
 

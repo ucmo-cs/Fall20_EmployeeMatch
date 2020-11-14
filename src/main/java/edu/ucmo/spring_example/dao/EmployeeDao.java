@@ -8,5 +8,6 @@ import java.util.List;
 @Repository
 public interface EmployeeDao extends CrudRepository<Employee, Integer> {
 
+    Employee findByEmail(String email);
     Employee findById(int id);
 }

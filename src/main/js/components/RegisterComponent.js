@@ -5,7 +5,6 @@ import axios from "axios";
 import ApiService from "../services/ApiService";
 
 class RegisterComponent extends Component{
-    submitHandler;
     constructor(props) {
         super(props);
         this.state = {
@@ -26,19 +25,22 @@ class RegisterComponent extends Component{
             });
     }*/
 
-    onChange = (e) =>
-        this.setState({ [e.target.name]: e.target.value });
-
-
+    onChange = (e) => {
+        this.setState({[e.target.name]: e.target.value});
+        console.log("state has been set for "+e.target);
+    }
 
     render(){
-        function saveCar()  {
+        function saveEmployee()  {
             axios.post(
                 'http://localhost:8080/employee',
                 {
-
+                    firstn: this.state.firstn,
+                    lastn: this.state.lastn,
+                    email: this.state.email,
+                    passhash: this.state.passhash
                 }
-            )
+            ).then((res) => console.log(res));
         }
 
         //const {email, password} = this.state;
@@ -56,7 +58,7 @@ class RegisterComponent extends Component{
                     <input className='col-12 row' type = 'text' id='lastn' name='lastn' value={this.state.lastn} onChange={this.onChange}/>
 
                     <br/>
-                    <Link to="/registerquestions"><input type="submit" style={{float: 'right'}} value="Submit"/></Link>
+                    <input type="submit" style={{float: 'right'}} value="Submit"/>
                     <br/>
                 </form>
             </div>

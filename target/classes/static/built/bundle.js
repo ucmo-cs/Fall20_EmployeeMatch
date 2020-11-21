@@ -35576,7 +35576,7 @@ var RegisterComponent = /*#__PURE__*/function (_Component) {
         id: "email",
         name: "email",
         value: this.state.email,
-        onChange: this.props.onChange
+        onChange: this.onChange
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "PASSWORD"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
         id: "password",
@@ -35590,14 +35590,14 @@ var RegisterComponent = /*#__PURE__*/function (_Component) {
         id: "firstn",
         name: "firstn",
         value: this.state.firstn,
-        onChange: this.props.onChange
+        onChange: this.onChange
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Last Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "col-12 row",
         type: "text",
         id: "lastn",
         name: "lastn",
         value: this.state.lastn,
-        onChange: this.props.onChange
+        onChange: this.onChange
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "/registerquestions"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {

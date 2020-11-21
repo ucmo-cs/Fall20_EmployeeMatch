@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS employee(
     firstn CHAR(20),
     lastn CHAR(20),
     email CHAR(50),
-    passHash Char(32),
+    passhash Char(32),
     Primary KEY (userId)
 );
 

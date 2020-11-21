@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const CAR_API_BASE_URL = 'http://localhost:8080/cars';
+const EMPLOYEE_BASE_URL = 'http://localhost:8080/employee';
 
 class ApiService {
 
@@ -24,6 +25,9 @@ class ApiService {
         return axios.put(CAR_API_BASE_URL + '/' + car.id, car);
     }
 
+    addEmployee(employee) {
+        return axios.post(""+EMPLOYEE_BASE_URL,employee);
+    }
 }
 
 export default new ApiService();

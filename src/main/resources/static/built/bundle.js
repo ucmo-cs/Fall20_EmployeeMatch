@@ -4752,7 +4752,7 @@ module.exports = ReactPropTypesSecret;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.13.1
+/** @license React v16.14.0
  * react-dom.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -29322,7 +29322,7 @@ function injectIntoDevTools(devToolsConfig) {
     // Enables DevTools to append owner stacks to error messages in DEV mode.
     getCurrentFiber:  function () {
       return current;
-    } 
+    }
   }));
 }
 var IsSomeRendererActing$1 = ReactSharedInternals.IsSomeRendererActing;
@@ -29674,7 +29674,7 @@ implementation) {
   };
 }
 
-var ReactVersion = '16.13.1';
+var ReactVersion = '16.14.0';
 
 setAttemptUserBlockingHydration(attemptUserBlockingHydration$1);
 setAttemptContinuousHydration(attemptContinuousHydration$1);
@@ -31220,7 +31220,7 @@ if (true) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.13.1
+/** @license React v16.14.0
  * react.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -31240,7 +31240,7 @@ if (true) {
 var _assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
 var checkPropTypes = __webpack_require__(/*! prop-types/checkPropTypes */ "./node_modules/prop-types/checkPropTypes.js");
 
-var ReactVersion = '16.13.1';
+var ReactVersion = '16.14.0';
 
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
@@ -34758,6 +34758,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/RegisterQuestionsCouplets */ "./src/main/js/components/RegisterQuestionsCouplets.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
 
 
 
@@ -34777,7 +34779,30 @@ function RegisterQuestionsView() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_1__["default"], {
     question: "Work-life Balance",
     name: "ew5"
-  })));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    question: "Willingness to work overtime",
+    name: "eo1"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    question: "Question 2",
+    name: "eo2"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    question: "Question 3",
+    name: "eo3"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    question: "Question 4",
+    name: "eo4"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    question: "Question 5",
+    name: "eo5"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "/accountHome"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "submit",
+    style: {
+      "float": 'right'
+    },
+    value: "Submit"
+  }))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (RegisterQuestionsView);
@@ -35461,6 +35486,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _RegisterCouplets__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RegisterCouplets */ "./src/main/js/components/RegisterCouplets.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _services_ApiService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/ApiService */ "./src/main/js/services/ApiService.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35489,6 +35515,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var RegisterComponent = /*#__PURE__*/function (_Component) {
   _inherits(RegisterComponent, _Component);
 
@@ -35503,44 +35530,74 @@ var RegisterComponent = /*#__PURE__*/function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "submitHandler", void 0);
 
+    _defineProperty(_assertThisInitialized(_this), "saveEmployee", function (e) {
+      e.preventDefault();
+      var employee = {
+        email: _this.state.email,
+        password: _this.state.password,
+        firstn: _this.state.firstn,
+        lastn: _this.state.lastn
+      };
+      _services_ApiService__WEBPACK_IMPORTED_MODULE_3__["default"].addEmployee(employee).then(function (res) {
+        _this.setState({
+          message: 'Employee added successfully.'
+        });
+
+        _this.props.history.push('/');
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onChange", function (e) {
+      return _this.setState(_defineProperty({}, e.target.name, e.target.value));
+    });
+
     _this.state = {
       email: '',
-      password: ''
+      password: '',
+      firstn: '',
+      lastn: ''
     };
+    _this.saveEmployee = _this.saveEmployee.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(RegisterComponent, [{
     key: "render",
     value: function render() {
-      var _this2 = this;
-
-      var _this$state = this.state,
-          email = _this$state.email,
-          password = _this$state.password;
-
-      this.submitHandler = function (e) {
-        e.preventDefault;
-        _this2.state.email = e.refs.email;
-        _this2.state.password = e.refs.password;
-        console.log(_this2.state);
-      };
-
+      //const {email, password} = this.state;
+      //this.submitHandler = (e) => {e.preventDefault; this.state.email = e.refs.email; this.state.password = e.refs.password; console.log(this.state)}
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.submitHandler
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterCouplets__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        name: "Email"
+        onSubmit: this.saveEmployee
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "col-12 row",
+        type: "text",
+        id: "email",
+        name: "email",
+        value: this.state.email,
+        onChange: this.onChange
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "PASSWORD"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
         id: "password",
         name: "password",
-        placeholder: "password"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterCouplets__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        name: "First Name"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterCouplets__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        name: "Last Name"
+        placeholder: "password",
+        value: this.state.password,
+        onChange: this.onChange
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "First Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "col-12 row",
+        type: "text",
+        id: "firstn",
+        name: "firstn",
+        value: this.state.firstn,
+        onChange: this.onChange
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Last Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "col-12 row",
+        type: "text",
+        id: "lastn",
+        name: "lastn",
+        value: this.state.lastn,
+        onChange: this.onChange
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "/registerquestions"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -35621,12 +35678,14 @@ var RegisterCouplets = /*#__PURE__*/function (_Component) {
   _createClass(RegisterCouplets, [{
     key: "render",
     value: function render() {
+      var name = this.props.name;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.props.name.toUpperCase()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "col-12 row",
         type: "text",
-        id: this.props.name,
-        name: this.props.name,
-        placeholder: this.props.name
+        id: name,
+        name: name,
+        value: this.props.myValue,
+        onChange: this.props.myOnChange
       }));
     }
   }]);
@@ -35735,6 +35794,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 var CAR_API_BASE_URL = 'http://localhost:8080/cars';
+var EMPLOYEE_BASE_URL = 'http://localhost:8080/employee';
 
 var ApiService = /*#__PURE__*/function () {
   function ApiService() {
@@ -35765,6 +35825,11 @@ var ApiService = /*#__PURE__*/function () {
     key: "editCar",
     value: function editCar(car) {
       return axios__WEBPACK_IMPORTED_MODULE_0___default.a.put(CAR_API_BASE_URL + '/' + car.id, car);
+    }
+  }, {
+    key: "addEmployee",
+    value: function addEmployee(employee) {
+      return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("" + EMPLOYEE_BASE_URL, employee);
     }
   }]);
 

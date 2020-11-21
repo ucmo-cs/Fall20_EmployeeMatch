@@ -6,10 +6,11 @@ class RegisterCouplets extends Component{
 
     render(){
 
+        const name = this.props.name;
         return(
             <div>
                 <h2>{this.props.name.toUpperCase()}</h2>
-                <input className='col-12 row' type = 'text' id={this.props.name} name={this.props.name}  placeholder={this.props.name}/>
+                <input className='col-12 row' type = 'text' id={name} name={name} value={this.props.myValue} onChange={this.props.myOnChange}/>
             </div>
 
         );

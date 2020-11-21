@@ -28,10 +28,11 @@ public class Employee {
 
 
 
-    public Employee(String first, String last, String email) {
+    public Employee(String first, String last, String email, String passHash) {
         this.firstn = first;
         this.lastn = last;
         this.email = email;
+        this.passHash = passHash;
     }
     public Employee(){
 

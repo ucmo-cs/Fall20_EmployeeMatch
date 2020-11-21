@@ -1,5 +1,6 @@
 import React from 'react';
 import RegisterQuestionsCouplets from "../components/RegisterQuestionsCouplets";
+import {Link} from "react-router-dom";
 
 function RegisterQuestionsView()
 {
@@ -14,6 +15,13 @@ function RegisterQuestionsView()
                 <RegisterQuestionsCouplets question ="Company Culture" name="ew3"></RegisterQuestionsCouplets>
                 <RegisterQuestionsCouplets question ="Promotion Opportunity" name="ew4"></RegisterQuestionsCouplets>
                 <RegisterQuestionsCouplets question ="Work-life Balance" name="ew5"></RegisterQuestionsCouplets>
+
+                <RegisterQuestionsCouplets question ="Willingness to work overtime" name="eo1"></RegisterQuestionsCouplets>
+                <RegisterQuestionsCouplets question ="Question 2" name="eo2"></RegisterQuestionsCouplets>
+                <RegisterQuestionsCouplets question ="Question 3" name="eo3"></RegisterQuestionsCouplets>
+                <RegisterQuestionsCouplets question ="Question 4" name="eo4"></RegisterQuestionsCouplets>
+                <RegisterQuestionsCouplets question ="Question 5" name="eo5"></RegisterQuestionsCouplets>
+                <Link to="/accountHome"><input type="submit" style={{float: 'right'}} value="Submit"/></Link>
 
             </form>
         </div>

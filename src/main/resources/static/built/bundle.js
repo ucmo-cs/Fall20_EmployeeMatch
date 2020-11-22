@@ -34684,7 +34684,7 @@ function HomeView() {
     className: "mainPage row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "text-center col-12 align-self-center"
-  }, "Partnering with employees and employers to match them according to their preferences since 2020!")));
+  }, "Partnering with employees and employers to match them according to their preferences since 2020")));
 } //<img src="Images/HandShake.jpg"/>
 //
 
@@ -35484,11 +35484,9 @@ var ListComponent = /*#__PURE__*/function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _RegisterCouplets__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RegisterCouplets */ "./src/main/js/components/RegisterCouplets.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _services_ApiService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/ApiService */ "./src/main/js/services/ApiService.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _services_ApiService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/ApiService */ "./src/main/js/services/ApiService.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35517,8 +35515,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
-
 var RegisterComponent = /*#__PURE__*/function (_Component) {
   _inherits(RegisterComponent, _Component);
 
@@ -35530,6 +35526,18 @@ var RegisterComponent = /*#__PURE__*/function (_Component) {
     _classCallCheck(this, RegisterComponent);
 
     _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "saveEmployee", function (e) {
+      e.preventDefault();
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost:8080/employee', {
+        firstn: _this.state.firstn,
+        lastn: _this.state.lastn,
+        email: _this.state.email,
+        passhash: _this.state.passhash
+      }).then(function (res) {
+        return console.log(res);
+      }); //this.props.history.push('/registerQuestions');
+    });
 
     _defineProperty(_assertThisInitialized(_this), "onChange", function (e) {
       _this.setState(_defineProperty({}, e.target.name, e.target.value));
@@ -35560,19 +35568,21 @@ var RegisterComponent = /*#__PURE__*/function (_Component) {
   _createClass(RegisterComponent, [{
     key: "render",
     value: function render() {
-      function saveEmployee() {
-        axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('http://localhost:8080/employee', {
-          firstn: this.state.firstn,
-          lastn: this.state.lastn,
-          email: this.state.email,
-          passhash: this.state.passhash
-        }).then(function (res) {
-          return console.log(res);
-        });
-      } //const {email, password} = this.state;
+      /*function saveEmployee(e)  {
+          e.preventDefault();
+          axios.post(
+              'http://localhost:8080/employee',
+              {
+                  firstn: this.state.firstn,
+                  lastn: this.state.lastn,
+                  email: this.state.email,
+                  passhash: this.state.passhash
+              }
+          ).then((res) => console.log(res));
+          //this.props.history.push('/registerQuestions');
+      }*/
+      //const {email, password} = this.state;
       //this.submitHandler = (e) => {e.preventDefault; this.state.email = e.refs.email; this.state.password = e.refs.password; console.log(this.state)}
-
-
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {

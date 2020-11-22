@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import RegisterCouplets from "./RegisterCouplets";
-import {Link} from "react-router-dom";
+
 import axios from "axios";
 import ApiService from "../services/ApiService";
 
@@ -25,13 +24,28 @@ class RegisterComponent extends Component{
             });
     }*/
 
+    saveEmployee = (e) => {
+        e.preventDefault();
+        axios.post(
+            'http://localhost:8080/employee',
+            {
+                firstn: this.state.firstn,
+                lastn: this.state.lastn,
+                email: this.state.email,
+                passhash: this.state.passhash
+            }
+        ).then((res) => console.log(res));
+        //this.props.history.push('/registerQuestions');
+    }
+
     onChange = (e) => {
         this.setState({[e.target.name]: e.target.value});
         console.log("state has been set for "+e.target);
     }
 
     render(){
-        function saveEmployee()  {
+        /*function saveEmployee(e)  {
+            e.preventDefault();
             axios.post(
                 'http://localhost:8080/employee',
                 {
@@ -41,7 +55,8 @@ class RegisterComponent extends Component{
                     passhash: this.state.passhash
                 }
             ).then((res) => console.log(res));
-        }
+            //this.props.history.push('/registerQuestions');
+        }*/
 
         //const {email, password} = this.state;
         //this.submitHandler = (e) => {e.preventDefault; this.state.email = e.refs.email; this.state.password = e.refs.password; console.log(this.state)}

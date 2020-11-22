@@ -9,7 +9,7 @@ function HomeView()
         <div>
             <div className="mainPage row" >
                 <h1 className="text-center col-12 align-self-center">Partnering with employees and employers to match them according to
-                    their preferences since 2020!</h1>
+                    their preferences since 2020</h1>
             </div>
         </div>
     );

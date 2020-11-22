@@ -4752,7 +4752,7 @@ module.exports = ReactPropTypesSecret;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.14.0
+/** @license React v16.13.1
  * react-dom.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -29322,7 +29322,7 @@ function injectIntoDevTools(devToolsConfig) {
     // Enables DevTools to append owner stacks to error messages in DEV mode.
     getCurrentFiber:  function () {
       return current;
-    }
+    } 
   }));
 }
 var IsSomeRendererActing$1 = ReactSharedInternals.IsSomeRendererActing;
@@ -29674,7 +29674,7 @@ implementation) {
   };
 }
 
-var ReactVersion = '16.14.0';
+var ReactVersion = '16.13.1';
 
 setAttemptUserBlockingHydration(attemptUserBlockingHydration$1);
 setAttemptContinuousHydration(attemptContinuousHydration$1);
@@ -31220,7 +31220,7 @@ if (true) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.14.0
+/** @license React v16.13.1
  * react.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -31240,7 +31240,7 @@ if (true) {
 var _assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
 var checkPropTypes = __webpack_require__(/*! prop-types/checkPropTypes */ "./node_modules/prop-types/checkPropTypes.js");
 
-var ReactVersion = '16.14.0';
+var ReactVersion = '16.13.1';
 
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
@@ -35484,9 +35484,9 @@ var ListComponent = /*#__PURE__*/function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _RegisterCouplets__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RegisterCouplets */ "./src/main/js/components/RegisterCouplets.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _services_ApiService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/ApiService */ "./src/main/js/services/ApiService.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _services_ApiService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/ApiService */ "./src/main/js/services/ApiService.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35515,7 +35515,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
 var RegisterComponent = /*#__PURE__*/function (_Component) {
   _inherits(RegisterComponent, _Component);
 
@@ -35528,42 +35527,60 @@ var RegisterComponent = /*#__PURE__*/function (_Component) {
 
     _this = _super.call(this, props);
 
-    _defineProperty(_assertThisInitialized(_this), "submitHandler", void 0);
-
     _defineProperty(_assertThisInitialized(_this), "saveEmployee", function (e) {
       e.preventDefault();
-      var employee = {
-        email: _this.state.email,
-        password: _this.state.password,
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost:8080/employee', {
         firstn: _this.state.firstn,
-        lastn: _this.state.lastn
-      };
-      _services_ApiService__WEBPACK_IMPORTED_MODULE_3__["default"].addEmployee(employee).then(function (res) {
-        _this.setState({
-          message: 'Employee added successfully.'
-        });
-
-        _this.props.history.push('/');
-      });
+        lastn: _this.state.lastn,
+        email: _this.state.email,
+        passhash: _this.state.passhash
+      }).then(function (res) {
+        return console.log(res);
+      }); //this.props.history.push('/registerQuestions');
     });
 
     _defineProperty(_assertThisInitialized(_this), "onChange", function (e) {
-      return _this.setState(_defineProperty({}, e.target.name, e.target.value));
+      _this.setState(_defineProperty({}, e.target.name, e.target.value));
+
+      console.log("state has been set for " + e.target);
     });
 
     _this.state = {
       email: '',
-      password: '',
+      passhash: '',
       firstn: '',
       lastn: ''
     };
     _this.saveEmployee = _this.saveEmployee.bind(_assertThisInitialized(_this));
     return _this;
   }
+  /*saveEmployee = (e) => {
+      e.preventDefault();
+      let employee = {email: this.state.email, password: this.state.password, firstn: this.state.firstn, lastn: this.state.lastn};
+      ApiService.addEmployee(employee)
+          .then(res => {
+              this.setState({message : 'Employee added successfully.'});
+              this.props.history.push('/');
+          });
+  }*/
+
 
   _createClass(RegisterComponent, [{
     key: "render",
     value: function render() {
+      /*function saveEmployee(e)  {
+          e.preventDefault();
+          axios.post(
+              'http://localhost:8080/employee',
+              {
+                  firstn: this.state.firstn,
+                  lastn: this.state.lastn,
+                  email: this.state.email,
+                  passhash: this.state.passhash
+              }
+          ).then((res) => console.log(res));
+          //this.props.history.push('/registerQuestions');
+      }*/
       //const {email, password} = this.state;
       //this.submitHandler = (e) => {e.preventDefault; this.state.email = e.refs.email; this.state.password = e.refs.password; console.log(this.state)}
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -35579,10 +35596,10 @@ var RegisterComponent = /*#__PURE__*/function (_Component) {
         onChange: this.onChange
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "PASSWORD"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
-        id: "password",
-        name: "password",
+        id: "passhash",
+        name: "passhash",
         placeholder: "password",
-        value: this.state.password,
+        value: this.state.passhash,
         onChange: this.onChange
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "First Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "col-12 row",
@@ -35598,15 +35615,13 @@ var RegisterComponent = /*#__PURE__*/function (_Component) {
         name: "lastn",
         value: this.state.lastn,
         onChange: this.onChange
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/registerquestions"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         style: {
           "float": 'right'
         },
         value: "Submit"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)));
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)));
     }
   }]);
 

@@ -33,6 +33,7 @@ public class Employee {
         this.lastn = last;
         this.email = email;
         this.passHash = passHash;
+        this.active = false;
     }
     public Employee(){
 

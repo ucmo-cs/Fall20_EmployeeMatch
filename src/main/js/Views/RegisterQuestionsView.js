@@ -4,7 +4,12 @@ import {Link} from "react-router-dom";
 
 function RegisterQuestionsView()
 {
-    return (
+    return(
+      <div>
+          <registerQuestionsComponent/>
+      </div>
+    );
+    /*return (
 
         <div>
             <form>
@@ -29,5 +34,6 @@ function RegisterQuestionsView()
 
 
     );
+     */
 }
 export default RegisterQuestionsView

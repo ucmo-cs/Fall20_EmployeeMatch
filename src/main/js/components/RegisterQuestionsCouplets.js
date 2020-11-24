@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class RegisterCouplets extends Component{
+class RegisterQuestionsCouplets extends Component{
     onChangeHandler;
 
 
@@ -9,7 +9,7 @@ class RegisterCouplets extends Component{
         return(
             <div>
                 <h2>{this.props.question.toLowerCase()}</h2>
-                <input className='col-12 row' type = 'text' id={this.props.name} name={this.props.name}  placeholder={this.props.name}/>
+                <input className='col-12 row' type = 'text' id={this.props.name} name={this.props.name}  placeholder={this.props.name} value={this.props.myValue} onChange={this.props.myOnChange}/>
             </div>
 
         );
@@ -17,4 +17,4 @@ class RegisterCouplets extends Component{
 
 }
 
-export default RegisterCouplets;
+export default RegisterQuestionsCouplets;

@@ -22,17 +22,17 @@ public class Employee {
     @Column
     private String email;
     @Column
-    private String passHash;
+    private String passhash;
     @Column(name = "active")
     private Boolean active;
 
 
 
-    public Employee(String first, String last, String email, String passHash) {
+    public Employee(String first, String last, String email, String passhash) {
         this.firstn = first;
         this.lastn = last;
         this.email = email;
-        this.passHash = passHash;
+        this.passhash = passhash;
         this.active = false;
     }
     public Employee(){
@@ -70,12 +70,12 @@ public class Employee {
     public void setEmail(String email) {
         this.email = email;
     }
-    public String getPassHash() {
-        return passHash;
+    public String getPasshash() {
+        return passhash;
     }
 
-    public void setPassHash(String passHash) {
-        this.passHash = passHash;
+    public void setPasshash(String passhash) {
+        this.passhash = passhash;
     }
 
     public Boolean getActive() {
@@ -93,7 +93,7 @@ public class Employee {
                 ", firstn='" + firstn + '\'' +
                 ", lastn='" + lastn + '\'' +
                 ", email='" + email + '\'' +
-                ", passHash='" + passHash + '\'' +
+                ", passHash='" + passhash + '\'' +
                 '}';
     }
 }

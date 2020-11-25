@@ -4752,7 +4752,7 @@ module.exports = ReactPropTypesSecret;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.13.1
+/** @license React v16.14.0
  * react-dom.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -29322,7 +29322,7 @@ function injectIntoDevTools(devToolsConfig) {
     // Enables DevTools to append owner stacks to error messages in DEV mode.
     getCurrentFiber:  function () {
       return current;
-    } 
+    }
   }));
 }
 var IsSomeRendererActing$1 = ReactSharedInternals.IsSomeRendererActing;
@@ -29674,7 +29674,7 @@ implementation) {
   };
 }
 
-var ReactVersion = '16.13.1';
+var ReactVersion = '16.14.0';
 
 setAttemptUserBlockingHydration(attemptUserBlockingHydration$1);
 setAttemptContinuousHydration(attemptContinuousHydration$1);
@@ -31220,7 +31220,7 @@ if (true) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.13.1
+/** @license React v16.14.0
  * react.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -31240,7 +31240,7 @@ if (true) {
 var _assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
 var checkPropTypes = __webpack_require__(/*! prop-types/checkPropTypes */ "./node_modules/prop-types/checkPropTypes.js");
 
-var ReactVersion = '16.13.1';
+var ReactVersion = '16.14.0';
 
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
@@ -34759,50 +34759,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/RegisterQuestionsCouplets */ "./src/main/js/components/RegisterQuestionsCouplets.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _components_RegisterQuestionsComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/RegisterQuestionsComponent */ "./src/main/js/components/RegisterQuestionsComponent.js");
+
 
 
 
 
 function RegisterQuestionsView() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "What do you value most in a company"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "rank each on a scale from 1-5 with 1 being the least important, and 5 being the most important"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    question: "Distance",
-    name: "ew1"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    question: "Time Off",
-    name: "ew2"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    question: "Company Culture",
-    name: "ew3"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    question: "Promotion Opportunity",
-    name: "ew4"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    question: "Work-life Balance",
-    name: "ew5"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    question: "Willingness to work overtime",
-    name: "eo1"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    question: "Question 2",
-    name: "eo2"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    question: "Question 3",
-    name: "eo3"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    question: "Question 4",
-    name: "eo4"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    question: "Question 5",
-    name: "eo5"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    to: "/accountHome"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "submit",
-    style: {
-      "float": 'right'
-    },
-    value: "Submit"
-  }))));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RegisterQuestionsComponent__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+  /*return (
+        <div>
+          <form>
+              <h1>What do you value most in a company</h1>
+              <h3>rank each on a scale from 1-5 with 1 being the least important, and 5 being the most important</h3>
+              <RegisterQuestionsCouplets question ="Distance" name="ew1"></RegisterQuestionsCouplets>
+              <RegisterQuestionsCouplets question ="Time Off" name="ew2"></RegisterQuestionsCouplets>
+              <RegisterQuestionsCouplets question ="Company Culture" name="ew3"></RegisterQuestionsCouplets>
+              <RegisterQuestionsCouplets question ="Promotion Opportunity" name="ew4"></RegisterQuestionsCouplets>
+              <RegisterQuestionsCouplets question ="Work-life Balance" name="ew5"></RegisterQuestionsCouplets>
+                <RegisterQuestionsCouplets question ="Willingness to work overtime" name="eo1"></RegisterQuestionsCouplets>
+              <RegisterQuestionsCouplets question ="Question 2" name="eo2"></RegisterQuestionsCouplets>
+              <RegisterQuestionsCouplets question ="Question 3" name="eo3"></RegisterQuestionsCouplets>
+              <RegisterQuestionsCouplets question ="Question 4" name="eo4"></RegisterQuestionsCouplets>
+              <RegisterQuestionsCouplets question ="Question 5" name="eo5"></RegisterQuestionsCouplets>
+              <Link to="/accountHome"><input type="submit" style={{float: 'right'}} value="Submit"/></Link>
+            </form>
+      </div>
+  
+  );
+   */
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (RegisterQuestionsView);
@@ -35486,7 +35471,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _services_ApiService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/ApiService */ "./src/main/js/services/ApiService.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _services_ApiService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/ApiService */ "./src/main/js/services/ApiService.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35515,6 +35501,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var RegisterComponent = /*#__PURE__*/function (_Component) {
   _inherits(RegisterComponent, _Component);
 
@@ -35528,28 +35515,47 @@ var RegisterComponent = /*#__PURE__*/function (_Component) {
     _this = _super.call(this, props);
 
     _defineProperty(_assertThisInitialized(_this), "saveEmployee", function (e) {
-      e.preventDefault();
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost:8080/employee', {
-        firstn: _this.state.firstn,
-        lastn: _this.state.lastn,
-        email: _this.state.email,
-        passhash: _this.state.passhash
-      }).then(function (res) {
-        return console.log(res);
-      }); //this.props.history.push('/registerQuestions');
+      e.preventDefault(); //if all fields are filled out post to the server
+
+      if (_this.validate()) {
+        axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost:8080/employee', {
+          firstn: _this.state.firstn,
+          lastn: _this.state.lastn,
+          email: _this.state.email,
+          passhash: _this.state.passhash
+        }).then(function (res) {
+          console.log(res);
+
+          _this.props.history.push('/registerQuestions');
+        });
+      } //one or more fields are blank
+      else {
+          _this.setState({
+            message: "one or more fields are not filled out. All fields are required"
+          });
+        }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "validate", function () {
+      if (_this.state.firstn.length == 0) return false;
+      if (_this.state.lastn == 0) return false;
+      if (_this.state.email == 0) return false;
+      if (_this.state.passhash == 0) return false;
+      return true;
     });
 
     _defineProperty(_assertThisInitialized(_this), "onChange", function (e) {
       _this.setState(_defineProperty({}, e.target.name, e.target.value));
 
-      console.log("state has been set for " + e.target);
+      console.log("state has been set for " + e.target.name);
     });
 
     _this.state = {
-      email: '',
-      passhash: '',
-      firstn: '',
-      lastn: ''
+      email: "",
+      passhash: "",
+      firstn: "",
+      lastn: "",
+      message: ""
     };
     _this.saveEmployee = _this.saveEmployee.bind(_assertThisInitialized(_this));
     return _this;
@@ -35621,14 +35627,18 @@ var RegisterComponent = /*#__PURE__*/function (_Component) {
           "float": 'right'
         },
         value: "Submit"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)));
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        style: {
+          color: 'red'
+        }
+      }, this.state.message))));
     }
   }]);
 
   return RegisterComponent;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (RegisterComponent);
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(RegisterComponent));
 
 /***/ }),
 
@@ -35712,6 +35722,182 @@ var RegisterCouplets = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
+/***/ "./src/main/js/components/RegisterQuestionsComponent.js":
+/*!**************************************************************!*\
+  !*** ./src/main/js/components/RegisterQuestionsComponent.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _services_ApiService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/ApiService */ "./src/main/js/services/ApiService.js");
+/* harmony import */ var _RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./RegisterQuestionsCouplets */ "./src/main/js/components/RegisterQuestionsCouplets.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+var RegisterQuestionsComponent = /*#__PURE__*/function (_Component) {
+  _inherits(RegisterQuestionsComponent, _Component);
+
+  var _super = _createSuper(RegisterQuestionsComponent);
+
+  function RegisterQuestionsComponent(props) {
+    var _this;
+
+    _classCallCheck(this, RegisterQuestionsComponent);
+
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "saveEmployeePreferences", function (e) {
+      e.preventDefault();
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost:8080/employee', {
+        userid: _this.state.userid,
+        eo1: _this.state.eo2,
+        eo2: _this.state.eo2,
+        eo3: _this.state.eo3,
+        eo4: _this.state.eo4,
+        eo5: _this.state.eo5,
+        ew1: _this.state.ew1,
+        ew2: _this.state.ew2,
+        ew3: _this.state.ew3,
+        ew4: _this.state.ew4,
+        ew5: _this.state.ew5
+      }).then(function (res) {
+        return console.log(res);
+      }); //this.props.history.push('/registerQuestions');
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onChange", function (e) {
+      _this.setState(_defineProperty({}, e.target.name, e.target.value));
+
+      console.log("state has been set for " + e.target);
+    });
+
+    _this.state = {
+      userid: null,
+      eo1: null,
+      eo2: null,
+      eo3: null,
+      eo4: null,
+      eo5: null,
+      ew1: null,
+      ew2: null,
+      ew3: null,
+      ew4: null,
+      ew5: null
+    };
+    _this.saveEmployee = _this.saveEmployee.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(RegisterQuestionsComponent, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.saveEmployeePreferences
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        name: "Distance",
+        myValue: this.state.eo1,
+        myOnChange: this.onChange,
+        question: "Distance"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        question: "Time Off",
+        name: "ew2",
+        myValue: this.state.ew2,
+        myOnChange: this.onChange
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        question: "Company Culture",
+        name: "ew3",
+        myValue: this.state.ew3,
+        myOnChange: this.onChange
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        question: "Promotion Opportunity",
+        name: "ew4",
+        myValue: this.state.ew4,
+        myOnChange: this.onChange
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        question: "Work-life Balance",
+        name: "ew5",
+        myValue: this.state.ew5,
+        myOnChange: this.onChange
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        question: "Willingness to work overtime",
+        name: "eo1",
+        myValue: this.state.eo1,
+        myOnChange: this.onChange
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        question: "Question 2",
+        name: "eo2",
+        myValue: this.state.eo2,
+        myOnChange: this.onChange
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        question: "Question 3",
+        name: "eo3",
+        myValue: this.state.eo3,
+        myOnChange: this.onChange
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        question: "Question 4",
+        name: "eo4",
+        myValue: this.state.eo4,
+        myOnChange: this.onChange
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        question: "Question 5",
+        name: "eo5",
+        myValue: this.state.eo5,
+        myOnChange: this.onChange
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
+        to: "/accountHome"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "submit",
+        style: {
+          "float": 'right'
+        },
+        value: "Submit"
+      }))));
+    }
+  }]);
+
+  return RegisterQuestionsComponent;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (RegisterQuestionsComponent);
+
+/***/ }),
+
 /***/ "./src/main/js/components/RegisterQuestionsCouplets.js":
 /*!*************************************************************!*\
   !*** ./src/main/js/components/RegisterQuestionsCouplets.js ***!
@@ -35749,15 +35935,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var RegisterCouplets = /*#__PURE__*/function (_Component) {
-  _inherits(RegisterCouplets, _Component);
+var RegisterQuestionsCouplets = /*#__PURE__*/function (_Component) {
+  _inherits(RegisterQuestionsCouplets, _Component);
 
-  var _super = _createSuper(RegisterCouplets);
+  var _super = _createSuper(RegisterQuestionsCouplets);
 
-  function RegisterCouplets() {
+  function RegisterQuestionsCouplets() {
     var _this;
 
-    _classCallCheck(this, RegisterCouplets);
+    _classCallCheck(this, RegisterQuestionsCouplets);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -35770,7 +35956,7 @@ var RegisterCouplets = /*#__PURE__*/function (_Component) {
     return _this;
   }
 
-  _createClass(RegisterCouplets, [{
+  _createClass(RegisterQuestionsCouplets, [{
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.props.question.toLowerCase()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -35778,15 +35964,17 @@ var RegisterCouplets = /*#__PURE__*/function (_Component) {
         type: "text",
         id: this.props.name,
         name: this.props.name,
-        placeholder: this.props.name
+        placeholder: this.props.name,
+        value: this.props.myValue,
+        onChange: this.props.myOnChange
       }));
     }
   }]);
 
-  return RegisterCouplets;
+  return RegisterQuestionsCouplets;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (RegisterCouplets);
+/* harmony default export */ __webpack_exports__["default"] = (RegisterQuestionsCouplets);
 
 /***/ }),
 

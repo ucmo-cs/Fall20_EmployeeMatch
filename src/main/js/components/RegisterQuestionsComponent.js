@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 
 import axios from "axios";
+import { withRouter } from 'react-router-dom';
 import ApiService from "../services/ApiService";
 import RegisterQuestionsCouplets from "./RegisterQuestionsCouplets";
-import Link from "react-router-dom/modules/Link";
+
 
 class RegisterQuestionsComponent extends Component{
     constructor(props) {
@@ -21,14 +22,14 @@ class RegisterQuestionsComponent extends Component{
             ew4 : null,
             ew5 : null
         }
-        this.saveEmployee = this.saveEmployee.bind(this);
+        this.saveEmployeePreferences = this.saveEmployeePreferences.bind(this);
     }
 
 
     saveEmployeePreferences = (e) => {
         e.preventDefault();
         axios.post(
-            'http://localhost:8080/employee',
+            'http://localhost:8080/employeepreferences',
             {
                 userid : this.state.userid,
                 eo1: this.state.eo2,
@@ -42,7 +43,8 @@ class RegisterQuestionsComponent extends Component{
                 ew4 : this.state.ew4,
                 ew5 : this.state.ew5
             }
-        ).then((res) => console.log(res));
+        ).then((res) => {console.log(res)
+                this.props.history.push('/accountHome')});
         //this.props.history.push('/registerQuestions');
     }
 
@@ -67,7 +69,7 @@ class RegisterQuestionsComponent extends Component{
                     <RegisterQuestionsCouplets question ="Question 3" name="eo3" myValue={this.state.eo3} myOnChange={this.onChange}></RegisterQuestionsCouplets>
                     <RegisterQuestionsCouplets question ="Question 4" name="eo4" myValue={this.state.eo4} myOnChange={this.onChange}></RegisterQuestionsCouplets>
                     <RegisterQuestionsCouplets question ="Question 5" name="eo5" myValue={this.state.eo5} myOnChange={this.onChange}></RegisterQuestionsCouplets>
-                    <Link to="/accountHome"><input type="submit" style={{float: 'right'}} value="Submit"/></Link>
+                    <input type="submit" style={{float: 'right'}} value="Submit"/>
                 </form>
             </div>
 
@@ -76,4 +78,4 @@ class RegisterQuestionsComponent extends Component{
 
 }
 
-export default RegisterQuestionsComponent;
+export default withRouter(RegisterQuestionsComponent);

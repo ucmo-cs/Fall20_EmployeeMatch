@@ -27,7 +27,7 @@ public class EmployeeController {
                 employee.getFirstn(),
                 employee.getLastn(),
                 employee.getEmail(),
-                employee.getPassHash());
+                employee.getPasshash());
         return employeeDao.save(newEmployee);
     }
 

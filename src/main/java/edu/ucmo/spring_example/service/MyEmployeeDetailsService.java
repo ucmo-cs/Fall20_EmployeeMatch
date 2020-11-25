@@ -34,7 +34,7 @@ public class MyEmployeeDetailsService implements UserDetailsService {
 
 
     private UserDetails buildUserForAuthentication(Employee employee, List<GrantedAuthority> authorities) {
-        return new org.springframework.security.core.userdetails.User(employee.getEmail(), employee.getPassHash(),
+        return new org.springframework.security.core.userdetails.User(employee.getEmail(), employee.getPasshash(),
                 employee.getActive(), true, true, true, authorities);
     }
 }

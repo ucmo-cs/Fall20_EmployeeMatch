@@ -4752,7 +4752,7 @@ module.exports = ReactPropTypesSecret;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.14.0
+/** @license React v16.13.1
  * react-dom.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -29322,7 +29322,7 @@ function injectIntoDevTools(devToolsConfig) {
     // Enables DevTools to append owner stacks to error messages in DEV mode.
     getCurrentFiber:  function () {
       return current;
-    }
+    } 
   }));
 }
 var IsSomeRendererActing$1 = ReactSharedInternals.IsSomeRendererActing;
@@ -29674,7 +29674,7 @@ implementation) {
   };
 }
 
-var ReactVersion = '16.14.0';
+var ReactVersion = '16.13.1';
 
 setAttemptUserBlockingHydration(attemptUserBlockingHydration$1);
 setAttemptContinuousHydration(attemptContinuousHydration$1);
@@ -31220,7 +31220,7 @@ if (true) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.14.0
+/** @license React v16.13.1
  * react.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -31240,7 +31240,7 @@ if (true) {
 var _assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
 var checkPropTypes = __webpack_require__(/*! prop-types/checkPropTypes */ "./node_modules/prop-types/checkPropTypes.js");
 
-var ReactVersion = '16.14.0';
+var ReactVersion = '16.13.1';
 
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
@@ -34767,27 +34767,6 @@ __webpack_require__.r(__webpack_exports__);
 
 function RegisterQuestionsView() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RegisterQuestionsComponent__WEBPACK_IMPORTED_MODULE_3__["default"], null));
-  /*return (
-        <div>
-          <form>
-              <h1>What do you value most in a company</h1>
-              <h3>rank each on a scale from 1-5 with 1 being the least important, and 5 being the most important</h3>
-              <RegisterQuestionsCouplets question ="Distance" name="ew1"></RegisterQuestionsCouplets>
-              <RegisterQuestionsCouplets question ="Time Off" name="ew2"></RegisterQuestionsCouplets>
-              <RegisterQuestionsCouplets question ="Company Culture" name="ew3"></RegisterQuestionsCouplets>
-              <RegisterQuestionsCouplets question ="Promotion Opportunity" name="ew4"></RegisterQuestionsCouplets>
-              <RegisterQuestionsCouplets question ="Work-life Balance" name="ew5"></RegisterQuestionsCouplets>
-                <RegisterQuestionsCouplets question ="Willingness to work overtime" name="eo1"></RegisterQuestionsCouplets>
-              <RegisterQuestionsCouplets question ="Question 2" name="eo2"></RegisterQuestionsCouplets>
-              <RegisterQuestionsCouplets question ="Question 3" name="eo3"></RegisterQuestionsCouplets>
-              <RegisterQuestionsCouplets question ="Question 4" name="eo4"></RegisterQuestionsCouplets>
-              <RegisterQuestionsCouplets question ="Question 5" name="eo5"></RegisterQuestionsCouplets>
-              <Link to="/accountHome"><input type="submit" style={{float: 'right'}} value="Submit"/></Link>
-            </form>
-      </div>
-  
-  );
-   */
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (RegisterQuestionsView);
@@ -35525,8 +35504,14 @@ var RegisterComponent = /*#__PURE__*/function (_Component) {
           passhash: _this.state.passhash
         }).then(function (res) {
           console.log(res);
+          console.log(res.data.userid);
 
-          _this.props.history.push('/registerQuestions');
+          _this.props.history.push({
+            pathname: '/registerQuestions',
+            state: {
+              userid: res.data.userid
+            }
+          });
         });
       } //one or more fields are blank
       else {
@@ -35735,9 +35720,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _services_ApiService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/ApiService */ "./src/main/js/services/ApiService.js");
-/* harmony import */ var _RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./RegisterQuestionsCouplets */ "./src/main/js/components/RegisterQuestionsCouplets.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _services_ApiService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/ApiService */ "./src/main/js/services/ApiService.js");
+/* harmony import */ var _RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./RegisterQuestionsCouplets */ "./src/main/js/components/RegisterQuestionsCouplets.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35782,27 +35767,74 @@ var RegisterQuestionsComponent = /*#__PURE__*/function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "saveEmployeePreferences", function (e) {
       e.preventDefault();
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost:8080/employee', {
-        userid: _this.state.userid,
-        eo1: _this.state.eo2,
-        eo2: _this.state.eo2,
-        eo3: _this.state.eo3,
-        eo4: _this.state.eo4,
-        eo5: _this.state.eo5,
-        ew1: _this.state.ew1,
-        ew2: _this.state.ew2,
-        ew3: _this.state.ew3,
-        ew4: _this.state.ew4,
-        ew5: _this.state.ew5
-      }).then(function (res) {
-        return console.log(res);
-      }); //this.props.history.push('/registerQuestions');
+
+      if (_this.validate()) {
+        axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost:8080/employeepreferences', {
+          userid: _this.props.location.state.userid,
+          eo1: _this.state.eo2,
+          eo2: _this.state.eo2,
+          eo3: _this.state.eo3,
+          eo4: _this.state.eo4,
+          eo5: _this.state.eo5,
+          ew1: _this.state.ew1,
+          ew2: _this.state.ew2,
+          ew3: _this.state.ew3,
+          ew4: _this.state.ew4,
+          ew5: _this.state.ew5
+        }).then(function (res) {
+          console.log(res);
+
+          _this.props.history.push('/accountHome');
+        });
+      } else _this.setState({
+        message: "incorrect entry. Ranks must be between 1 and 5 and must contain no repeats"
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "validate", function () {
+      try {
+        //validation for eos
+        var eoSelections = [parseInt(_this.state.eo1), parseInt(_this.state.eo2), parseInt(_this.state.eo3), parseInt(_this.state.eo4), parseInt(_this.state.eo5)];
+        var eo = [false, false, false, false, false];
+
+        for (var i = 0; i < 5; i++) {
+          //check to see that i is not nan
+          if (isNaN(eoSelections[i])) return false; //check that the selection is in proper range
+
+          if (eoSelections[i] < 1 || eoSelections[i] > 5) return false; //check that rank has not been assigned already
+
+          if (!eo[eoSelections[i - 1]]) eo[eoSelections[i - 1]] = true;else return false;
+        } //validation for ews
+
+
+        var ewSelections = [parseInt(_this.state.ew1), parseInt(_this.state.ew2), parseInt(_this.state.ew3), parseInt(_this.state.ew4), parseInt(_this.state.ew5)];
+        var ew = [false, false, false, false, false];
+
+        for (var _i = 0; _i < 5; _i++) {
+          //check to see that i is not nan
+          if (isNaN(eoSelections[_i])) return false; //check that the selection is in proper range
+
+          if (ewSelections[_i] < 1 || ewSelections[_i] > 5) return false; //check that rank has not been assigned already
+
+          if (!ew[ewSelections[_i - 1]]) ew[ewSelections[_i - 1]] = true;else return false;
+        }
+      } catch (NumberFormatException) {
+        console.log(NumberFormatException);
+
+        _this.setState({
+          message: "inputs must be numbers"
+        });
+
+        return false;
+      }
+
+      return true;
     });
 
     _defineProperty(_assertThisInitialized(_this), "onChange", function (e) {
       _this.setState(_defineProperty({}, e.target.name, e.target.value));
 
-      console.log("state has been set for " + e.target);
+      console.log("state has been set for " + e.target.name);
     });
 
     _this.state = {
@@ -35816,9 +35848,10 @@ var RegisterQuestionsComponent = /*#__PURE__*/function (_Component) {
       ew2: null,
       ew3: null,
       ew4: null,
-      ew5: null
+      ew5: null,
+      message: null
     };
-    _this.saveEmployee = _this.saveEmployee.bind(_assertThisInitialized(_this));
+    _this.saveEmployeePreferences = _this.saveEmployeePreferences.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -35829,72 +35862,74 @@ var RegisterQuestionsComponent = /*#__PURE__*/function (_Component) {
         className: "container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.saveEmployeePreferences
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        name: "Distance",
-        myValue: this.state.eo1,
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Rank your preferences from one to five for what you are looking for in a company"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "all entries must be between 1-5 and not contain any repeats"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        name: "ew1",
+        myValue: this.state.ew1,
         myOnChange: this.onChange,
         question: "Distance"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_4__["default"], {
         question: "Time Off",
         name: "ew2",
         myValue: this.state.ew2,
         myOnChange: this.onChange
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_4__["default"], {
         question: "Company Culture",
         name: "ew3",
         myValue: this.state.ew3,
         myOnChange: this.onChange
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_4__["default"], {
         question: "Promotion Opportunity",
         name: "ew4",
         myValue: this.state.ew4,
         myOnChange: this.onChange
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_4__["default"], {
         question: "Work-life Balance",
         name: "ew5",
         myValue: this.state.ew5,
         myOnChange: this.onChange
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Rank your preferences from one to five for what you can offer to a company"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "all entries must be between 1-5 and not contain any repeats"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_4__["default"], {
         question: "Willingness to work overtime",
         name: "eo1",
         myValue: this.state.eo1,
         myOnChange: this.onChange
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_4__["default"], {
         question: "Question 2",
         name: "eo2",
         myValue: this.state.eo2,
         myOnChange: this.onChange
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_4__["default"], {
         question: "Question 3",
         name: "eo3",
         myValue: this.state.eo3,
         myOnChange: this.onChange
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_4__["default"], {
         question: "Question 4",
         name: "eo4",
         myValue: this.state.eo4,
         myOnChange: this.onChange
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterQuestionsCouplets__WEBPACK_IMPORTED_MODULE_4__["default"], {
         question: "Question 5",
         name: "eo5",
         myValue: this.state.eo5,
         myOnChange: this.onChange
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
-        to: "/accountHome"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         style: {
           "float": 'right'
         },
         value: "Submit"
-      }))));
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        style: {
+          color: 'red'
+        }
+      }, this.state.message)));
     }
   }]);
 
   return RegisterQuestionsComponent;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (RegisterQuestionsComponent);
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(RegisterQuestionsComponent));
 
 /***/ }),
 

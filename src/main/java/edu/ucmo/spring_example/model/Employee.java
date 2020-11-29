@@ -1,10 +1,6 @@
 package edu.ucmo.spring_example.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import java.util.Objects;
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "employee")
@@ -14,7 +10,7 @@ public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int userid;
     @Column
     private String firstn;
     @Column
@@ -39,12 +35,12 @@ public class Employee {
 
     }
 
-    public int getId() {
-        return id;
+    public int getUserid() {
+        return userid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserid(int id) {
+        this.userid = id;
     }
 
     public String getFirstn() {
@@ -89,7 +85,7 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee{" +
-                "id=" + id +
+                "id=" + userid +
                 ", firstn='" + firstn + '\'' +
                 ", lastn='" + lastn + '\'' +
                 ", email='" + email + '\'' +

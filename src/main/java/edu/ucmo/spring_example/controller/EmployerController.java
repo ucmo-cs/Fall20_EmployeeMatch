@@ -18,7 +18,7 @@ public class EmployerController {
     private EmployerDao employerDao;
 
     //TODO: make post mapping work
-    @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PostMapping
     public Employer saveEmployer(@RequestBody Employer employer){
         Employer newEmployer = new Employer(employer.getCompanyid(),
                 employer.getCompanyname(),

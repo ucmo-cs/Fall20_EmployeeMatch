@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS employee;
 CREATE TABLE IF NOT EXISTS employee(
-    userId INT UNIQUE AUTO_INCREMENT,
+    userid INT UNIQUE AUTO_INCREMENT,
     firstn CHAR(20),
     lastn CHAR(20),
     email CHAR(50),
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS employer (
     )
 DROP TABLE IF EXISTS employeePreferences;
 CREATE TABLE IF NOT EXISTS employeePreferences (
-    userId INT UNIQUE,
+    userid INT UNIQUE,
     ew1 int,
     ew2 int,
     ew3 int,
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS employeePreferences (
     eo3 int,
     eo4 int,
     eo5 int,
-    FOREIGN KEY (userId) REFERENCES employee(userId)
+    FOREIGN KEY (userid) REFERENCES employee(userid)
     );
 DROP TABLE IF EXISTS employerPreferences;
 CREATE TABLE IF NOT EXISTS employerPreferences (

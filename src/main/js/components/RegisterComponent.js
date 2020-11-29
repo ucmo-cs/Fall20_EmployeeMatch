@@ -39,8 +39,14 @@ class RegisterComponent extends Component{
                     email: this.state.email,
                     passhash: this.state.passhash
                 }
-            ).then((res) => {console.log(res);
-                this.props.history.push('/registerQuestions');});
+            ).then((res) => {
+                console.log(res);
+                console.log(res.data.userid);
+                this.props.history.push({
+                    pathname: '/registerQuestions',
+                    state: {userid: res.data.userid}
+                })
+            });
 
         }
         //one or more fields are blank

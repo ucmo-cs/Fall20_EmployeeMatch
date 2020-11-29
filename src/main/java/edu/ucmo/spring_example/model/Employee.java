@@ -34,6 +34,14 @@ public class Employee {
     public Employee(){
 
     }
+    public Employee(int id, String first, String last, String email, String passhash) {
+        this.userid = id;
+        this.firstn = first;
+        this.lastn = last;
+        this.email = email;
+        this.passhash = passhash;
+        this.active = false;
+    }
 
     public int getUserid() {
         return userid;

@@ -1,14 +1,12 @@
 package edu.ucmo.spring_example.service;
 
+import com.github.javafaker.Faker;
 import edu.ucmo.spring_example.EmployeeMatchApplication;
 import edu.ucmo.spring_example.model.*;
 
 import java.io.IOException;
 import java.sql.*;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class BestMatch {
     private static DataFromApi employersData;
@@ -110,7 +108,7 @@ public class BestMatch {
                         maxKey = key;
                     }
                 }
-                rankings[currentRank] = maxKey;
+                rankings[currentRank++] = maxKey;
                 correlation.remove(maxKey);
             }
             //create final bestMatchEmployee object
@@ -170,7 +168,7 @@ public class BestMatch {
                         maxKey = key;
                     }
                 }
-                rankings[currentRank] = (maxKey);
+                rankings[currentRank++] = (maxKey);
                 correlation.remove(maxKey);
             }
             //create final bestMatchEmployee object
@@ -182,27 +180,84 @@ public class BestMatch {
     //TODO: add enough employers to where there is an even amount of employees to employers
     public static void balanceEmployers() throws IOException, SQLException {
         ResultSet rs = null;
-        int numToAdd, numEmployees, numEmployers =0;
+        int numToAdd, numEmployees =0, numEmployers =0;
         try {
-            String url = "https://www.math-cs.ucmo.edu/phpmyadmin/";
+            String url = "jdbc:mysql://www.math-cs.ucmo.edu:3306/F20Employee";
             Connection conn = DriverManager.getConnection(url,"F20Employee","F20Employee12#$");
             Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT COUNT(*) FROM employees ");
+            rs = stmt.executeQuery("SELECT count(*) FROM employee");
+            rs.next();
+            numEmployees = rs.getInt("count(*)");
+
             conn.close();
         } catch (Exception e) {
             System.err.println("Got an exception! ");
             System.err.println(e.getMessage());
         }
         numEmployers = employersData.getDataToEmployer().length;
-        numEmployees = rs.getInt("count(*)");
+
         numToAdd = numEmployees - numEmployers;
+
+        //create a new entry for each
+        Random ran = new Random();
+
+        String url = "jdbc:mysql://www.math-cs.ucmo.edu:3306/F20Employee";
+        Connection conn = DriverManager.getConnection(url,"F20Employee","F20Employee12#$");
+        Statement stmt = conn.createStatement();
+        Faker faker = new Faker();
         for(int i = 0; i < numToAdd; i++)   {
+            String fname = faker.name().firstName();
+            String lname = faker.name().lastName();
+            String companyName = faker.company().name();
+            String email = (fname+"."+lname+"@"+companyName+".com").replaceAll(" |,|'", "");
+            if(email.length() >= 50 )
+                continue;
+            int eo[] = new int[5];;
+            int[] ew = new int[5];
+            boolean[] usedRank = {false,false,false,false,false};
+            int companyId;
             //TODO: post data to server with random values
+            //post new employer to database
+            String query = "INSERT INTO employer( companyName, email )" +
+                    "VALUES (" +
+                    "\""+companyName+"\", \""+email +
+                    "\");";
+            stmt.executeUpdate(query);
+
+            //obtain company id for the company we just added
+            query = "Select companyid FROM employer WHERE email = \""+email+"\";";
+            rs = stmt.executeQuery(query);
+            rs.next();
+            companyId = rs.getInt("companyid");
+
+            //assign eo and ew
+            for(int z =1; z <= 5;z++)    {
+                int currentRank = ran.nextInt(5);
+                while(usedRank[currentRank])    {
+                    currentRank = ran.nextInt(5);
+                }
+                eo[currentRank] = z;
+                ew[currentRank] = z;
+                usedRank[currentRank] = true;
+            }
+
+            //post employer preferences to database
+            query ="INSERT INTO employerpreferences VALUES (" +
+                    companyId+"," +
+                    eo[0] + "," +
+                    eo[1] + "," +
+                    eo[2] + "," +
+                    eo[3] + "," +
+                    eo[4] + "," +
+                    ew[0] + "," +
+                    ew[1] + "," +
+                    ew[2] + "," +
+                    ew[3] + "," +
+                    ew[4] + ");";
+            //statement to stop on
+            stmt.executeUpdate(query);
         }
-
-
-
-        System.out.println(rs);
+        conn.close();
     }
 }
 

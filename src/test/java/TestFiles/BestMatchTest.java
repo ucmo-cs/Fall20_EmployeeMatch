@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -41,14 +42,19 @@ class BestMatchTest {
     }
 
     @Test
-    void balanceEmployers() throws IOException {
-        //bestMatch.balanceEmployers();
+    void balanceEmployers() throws IOException, SQLException {
+        bestMatch.balanceEmployers();
     }
+
 
     @Test
     void initializeMatches()    {
         bestMatch.initializeMatch(employers,employees,employeePreferences,employerPreferences);
-        System.out.println("BestMatchEmployees: "+bestMatch.getBestMatchEmployees()[0].employeeId);
-        System.out.println("BestMatchEmployers: "+bestMatch.getBestMatchEmployers()[0].companyId);
+        for(int i:bestMatch.getBestMatchEmployees()[1].rankings )
+            System.out.print(i);
+        System.out.println();
+        for(int i:bestMatch.getBestMatchEmployers()[1].rankings )
+            System.out.print(i);
+
     }
 }

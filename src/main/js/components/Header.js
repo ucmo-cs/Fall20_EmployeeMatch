@@ -33,7 +33,7 @@ class Header extends Component{
                 </div>
 
 
-                <Link className="text-light" to="/login"><button type="button" className="btn btn-primary btn-lg">Login</button></Link>
+                <a href= "http://localhost:8080/login"><button  type="button" className="btn btn-primary btn-lg">Login</button></a>
 
 
             </nav>

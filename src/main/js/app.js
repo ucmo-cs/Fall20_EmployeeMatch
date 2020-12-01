@@ -11,6 +11,7 @@ import AboutView from './Views/AboutView'
 import WorkWithView from "./Views/WorkWithView";
 import RegisterView from "./Views/RegisterView";
 import RegisterQuestionsView from "./Views/RegisterQuestionsView";
+import AccountHomeView from "./Views/AccountHomeView";
 
 function App() {
 
@@ -29,14 +30,15 @@ function App() {
 						<Route path="/edit" component={EditComponent} />
 						<Route path="/about" component={EditComponent}><AboutView/></Route>
 						<Route path="/WorkWith" component={EditComponent}><WorkWithView/></Route>
-						<Route path="/login">
-							<LoginView/>
-						</Route>
+
 						<Route path="/Register">
 							<RegisterView/>
 						</Route>
 						<Route path="/registerQuestions">
 							<RegisterQuestionsView/>
+						</Route>
+						<Route path="/AccountHome">
+							<AccountHomeView/>
 						</Route>
 
 					</Switch>

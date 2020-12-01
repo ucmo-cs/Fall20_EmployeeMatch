@@ -15,6 +15,7 @@ class DataFromApiTest {
     DataFromApi api = new DataFromApi(url);
 
 
+
     DataFromApiTest() throws IOException {
     }
 
@@ -22,14 +23,21 @@ class DataFromApiTest {
     void setUp() {
     }
 
-    @Test
+    /*@Test
     void getDataString() {
         assertEquals("[{\"userid\":507,\"ew1\":1,\"ew2\":2,\"ew3\":3,\"ew4\":4,\"ew5\":5,\"eo1\":1,\"eo2\":2,\"eo3\":3,\"eo4\":4,\"eo5\":5},{\"userid\":508,\"ew1\":0,\"ew2\":2,\"ew3\":3,\"ew4\":4,\"ew5\":5,\"eo1\":2,\"eo2\":2,\"eo3\":3,\"eo4\":4,\"eo5\":5},{\"userid\":509,\"ew1\":0,\"ew2\":2,\"ew3\":3,\"ew4\":4,\"ew5\":5,\"eo1\":2,\"eo2\":2,\"eo3\":3,\"eo4\":4,\"eo5\":5},{\"userid\":0,\"ew1\":1,\"ew2\":2,\"ew3\":3,\"ew4\":4,\"ew5\":5,\"eo1\":2,\"eo2\":2,\"eo3\":3,\"eo4\":4,\"eo5\":5},{\"userid\":44,\"ew1\":1,\"ew2\":2,\"ew3\":3,\"ew4\":4,\"ew5\":5,\"eo1\":2,\"eo2\":2,\"eo3\":3,\"eo4\":4,\"eo5\":5},{\"userid\":45,\"ew1\":5,\"ew2\":1,\"ew3\":2,\"ew4\":3,\"ew5\":4,\"eo1\":2,\"eo2\":2,\"eo3\":3,\"eo4\":4,\"eo5\":5},{\"userid\":48,\"ew1\":1,\"ew2\":2,\"ew3\":3,\"ew4\":4,\"ew5\":5,\"eo1\":1,\"eo2\":1,\"eo3\":2,\"eo4\":3,\"eo5\":5}]",
                 api.getDataString());
     }
 
+     */
+
+    @Test
+    void getDataToEmployee() throws IOException {
+        DataFromApi employeeApi = new DataFromApi("http://localhost:8080/employee");
+    }
+
     @Test
     void getDataToEmployeePreferences() {
-        assertEquals(48,api.getDataToEmployeePreferences()[6].getUserid());
+        assertEquals(1127,api.getDataToEmployeePreferences()[4].getUserid());
     }
 }

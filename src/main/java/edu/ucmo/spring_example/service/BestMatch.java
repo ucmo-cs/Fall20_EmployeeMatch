@@ -18,6 +18,8 @@ public class BestMatch {
     private EmployerPreferences[] employerPreferences;
     private BestMatchEmployee[] bestMatchEmployees;
     private BestMatchEmployer[] bestMatchEmployers;
+    public Hashtable matches;
+    private static String url = "jdbc:mysql://www.math-cs.ucmo.edu:3306/F20Employee";
 
     public BestMatchEmployee[] getBestMatchEmployees() {
         return bestMatchEmployees;
@@ -35,29 +37,108 @@ public class BestMatch {
         this.bestMatchEmployers = bestMatchEmployers;
     }
 
-
-
-
-    public BestMatch() throws IOException {
-        employersData= new DataFromApi("http://localhost:8080/employer");
+    public BestMatch() throws IOException, SQLException {
+        employersData = new DataFromApi("http://localhost:8080/employer");
         employeePreferencesData = new DataFromApi("http://localhost:8080/employeepreferences");
-        employerPreferencesData = new DataFromApi("http://localhost:8080/employerpreferences");;
+        employerPreferencesData = new DataFromApi("http://localhost:8080/employerpreferences");
+        employeePreferences = employeePreferencesData.getDataToEmployeePreferences();
+        employerPreferences = employerPreferencesData.getDataToEmployerPreferences();
         employers = employersData.getDataToEmployer();
+        initializeEmployees();
+        matches = new Hashtable();
     }
 
-    public void initializeMatch()    {
+    public void initializeMatch() throws SQLException, IOException {
+        balanceEmployers();
         initializeMatch(employers, employees, employeePreferences, employerPreferences);
+        postMatchesToDatabase(matches);
     }
 
     //two methods created here for testing purposes
     public void initializeMatch(Employer[] iEmployers, Employee[] iEmployees, EmployeePreferences[] iEmployeePreferences, EmployerPreferences[] iEmployerPreferences) {
         bestMatchEmployees = new BestMatchEmployee[iEmployees.length];
-        bestMatchEmployers = new BestMatchEmployer[iEmployees.length];
+        bestMatchEmployers = new BestMatchEmployer[iEmployers.length];
         initiateBestMatchEmployee(iEmployers, iEmployees, iEmployeePreferences, iEmployerPreferences);
         initiateBestMatchEmployer(iEmployers, iEmployees, iEmployeePreferences, iEmployerPreferences);
-        //TODO: left off here. Parsed employees and employers for processing. need to write bestMatch alorithm now
+
+        //Best Match Algorithm
+        while (matches.size() < bestMatchEmployers.length) {
+            //reset all rank queues for employers
+            for (BestMatchEmployer i : bestMatchEmployers) {
+                i.resetQueue();
+            }
+
+            for (BestMatchEmployer currentEmployer : bestMatchEmployers) {
+                int currentProposal = 0;
+                //every employer will extend a proposal from the front of their queue
+                if (!currentEmployer.matched)
+                    currentProposal = (int) currentEmployer.rankingsQueue.poll();
+                //find employee with this id and extend a proposal
+                for (int i = 0; i < bestMatchEmployees.length; i++) {
+                    if (bestMatchEmployees[i].employeeId == currentProposal)
+                        bestMatchEmployees[i].proposals.add(currentEmployer.companyId);
+                }
+            }
+            //each employee accepts their highest ranked proposal
+            for (BestMatchEmployee currentEmployee : bestMatchEmployees) {
+                for (int i : currentEmployee.rankings) {
+                    //loop through the rankings and break at the first proposal
+                    if (currentEmployee.proposals.contains(i)) {
+                        //if already matched, unmatch their pair
+                        if (currentEmployee.matched) {
+                            int companyToUnmatch = (int) matches.get(currentEmployee.employeeId);
+                            for (BestMatchEmployer currentEmployer : bestMatchEmployers)
+                                if (currentEmployer.companyId == companyToUnmatch)
+                                    currentEmployer.matched = false;
+                        }
+                        //now match the employer to the employee
+                        matches.put(currentEmployee.employeeId, i);
+                        //mark the employee as having been matched
+                        currentEmployee.matched = true;
+                        //mark the newly matched employer as having been matched
+                        for (BestMatchEmployer e : bestMatchEmployers)
+                            if (e.companyId == i)
+                                e.matched = true;
+                        break;
+                    }
+
+                }
+            }
+        }
 
     }
+
+    public void initializeEmployees() throws SQLException {
+        Connection conn = DriverManager.getConnection(url,"F20Employee","F20Employee12#$");
+        Statement stmt = conn.createStatement();
+        stmt.executeUpdate("DELETE FROM matches");
+        ResultSet employeeCount = stmt.executeQuery("SELECT COUNT(*) FROM employee");
+        employeeCount.next();
+        employees = new Employee[employeeCount.getInt("COUNT(*)")];
+
+        int i =0;
+        //while rs is not empty, convert each row into an employee object and append them to the tempEmployees
+        for(ResultSet rs = stmt.executeQuery("SELECT * FROM employee"); rs.next();i++ )    {
+            Employee currentEmployee = new Employee(rs.getInt("userid"), rs.getString("firstn"), rs.getString("lastn") ,rs.getString("email"), rs.getString("passhash"));
+            employees[i] = currentEmployee;
+        }
+    }
+
+    public void postMatchesToDatabase(Hashtable iMatches) throws SQLException {
+        Connection conn = DriverManager.getConnection(url,"F20Employee","F20Employee12#$");
+        Statement stmt = conn.createStatement();
+        Object[] keySet = iMatches.keySet().toArray();
+        for(Object currentKey: keySet)  {
+            String query = "INSERT INTO matches VALUES (" +
+                    currentKey+","+
+                    matches.get(currentKey)
+                    + ");";
+            stmt.execute(query);
+        }
+
+    }
+
+
 
     private void initiateBestMatchEmployer(Employer[] iEmployers, Employee[] iEmployees, EmployeePreferences[] iEmployeePreferences, EmployerPreferences[] iEmployerPreferences) {
         int count = 0;
@@ -177,12 +258,11 @@ public class BestMatch {
         }
     }
 
-    //TODO: add enough employers to where there is an even amount of employees to employers
     public static void balanceEmployers() throws IOException, SQLException {
         ResultSet rs = null;
         int numToAdd, numEmployees =0, numEmployers =0;
         try {
-            String url = "jdbc:mysql://www.math-cs.ucmo.edu:3306/F20Employee";
+
             Connection conn = DriverManager.getConnection(url,"F20Employee","F20Employee12#$");
             Statement stmt = conn.createStatement();
             rs = stmt.executeQuery("SELECT count(*) FROM employee");
@@ -216,7 +296,6 @@ public class BestMatch {
             int[] ew = new int[5];
             boolean[] usedRank = {false,false,false,false,false};
             int companyId;
-            //TODO: post data to server with random values
             //post new employer to database
             String query = "INSERT INTO employer( companyName, email )" +
                     "VALUES (" +

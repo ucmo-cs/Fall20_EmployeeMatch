@@ -1,5 +1,5 @@
 .body {font-family: Arial, Helvetica, sans-serif;
-        font-size: 20px;}
+    font-size: 20px;}
 
 .uname, .psw{
     font-size: 15px;
@@ -92,25 +92,4 @@ span.psw {
     .register {
         width: 100%;
     }
-}
-
-/*css for main page background image div*/
-.mainPage   {
-    background-image: url(http://localhost:8080/Images/HandShake.jpg);
-    background-size: cover;
-    height: 50vw;
-    background-repeat: no-repeat;
-    opacity: .75;
-    /*background-attachment: fixed;*/
-    background-position: center center;
-}
-
-.mainPage h1   {
-    font-weight: bold;
-    color: black;
-    font-size: 40px;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: white;
-    /*opacity: 1.0 !important;*/
-
 }

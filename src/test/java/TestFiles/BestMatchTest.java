@@ -37,7 +37,7 @@ class BestMatchTest {
     }
 
     @BeforeEach
-    void setUp() throws IOException {
+    void setUp() throws IOException, SQLException {
         bestMatch = new BestMatch();
     }
 
@@ -46,15 +46,17 @@ class BestMatchTest {
         bestMatch.balanceEmployers();
     }
 
+    @Test
+    void postMatches() throws SQLException {
+        initializeMatches();
+        bestMatch.postMatchesToDatabase(bestMatch.matches);
+    }
+
 
     @Test
     void initializeMatches()    {
         bestMatch.initializeMatch(employers,employees,employeePreferences,employerPreferences);
-        for(int i:bestMatch.getBestMatchEmployees()[1].rankings )
-            System.out.print(i);
-        System.out.println();
-        for(int i:bestMatch.getBestMatchEmployers()[1].rankings )
-            System.out.print(i);
+        System.out.println(bestMatch.matches);
 
     }
 }

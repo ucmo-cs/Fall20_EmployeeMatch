@@ -33,9 +33,12 @@ class Header extends Component{
                 </div>
 
 
+                <div className="col-2 row justify-content-between">
                 <a href= "http://localhost:8080/login"><button  type="button" className="btn btn-primary btn-lg">Login</button></a>
 
+
                 <Link to="/register"><button type="button" className="btn btn-primary btn-lg">Register</button></Link>
+                </div>
 
 
             </nav>

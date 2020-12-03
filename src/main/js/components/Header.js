@@ -35,6 +35,9 @@ class Header extends Component{
 
                 <a href= "http://localhost:8080/login"><button  type="button" className="btn btn-primary btn-lg">Login</button></a>
 
+                <li className={navBarStyle}>
+                    <Link className="nav-link" to="/Register">Register</Link>
+                </li>
 
             </nav>
         );

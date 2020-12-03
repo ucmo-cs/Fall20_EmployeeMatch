@@ -35,9 +35,8 @@ class Header extends Component{
 
                 <a href= "http://localhost:8080/login"><button  type="button" className="btn btn-primary btn-lg">Login</button></a>
 
-                <li className={navBarStyle}>
-                    <Link className="nav-link" to="/Register">Register</Link>
-                </li>
+                <Link to="/register"><button type="button" className="btn btn-primary btn-lg">Register</button></Link>
+
 
             </nav>
         );
@@ -46,6 +45,11 @@ class Header extends Component{
 }
 const navBarStyle = " nav-item font-weight-bold";
 
+/*
+<li className={navBarStyle}>
+                    <Link className="nav-link" to="/Register">Register</Link>
+                </li>
+ */
 
 
 const style = {

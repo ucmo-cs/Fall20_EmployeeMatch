@@ -31,7 +31,7 @@ function App() {
 						<Route path="/about" component={EditComponent}><AboutView/></Route>
 						<Route path="/WorkWith" component={EditComponent}><WorkWithView/></Route>
 
-						<Route path="/Register">
+						<Route path="/register">
 							<RegisterView/>
 						</Route>
 						<Route path="/registerQuestions">
